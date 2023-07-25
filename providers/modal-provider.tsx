@@ -10,8 +10,8 @@ export const ModalProvider = () => {
     useEffect(() => {
         setIsMounted(true);
     },[]);
-
-    if (isMounted) {
+    
+    if (!isMounted) {
         return null;
     }
 

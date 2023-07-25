@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import {
     Dialog, 
@@ -28,6 +28,7 @@ export const Modal: React.FC<ModalProps> = ({
             onClose();
         }
     }
+
     return (
         <Dialog open={isOpen} onOpenChange={onChange}>
             <DialogContent>
