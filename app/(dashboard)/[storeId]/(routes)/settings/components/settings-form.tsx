@@ -78,7 +78,7 @@ export const SettingsForm: React.FC<SettingsFormProps> = ({
     };
 
     const origin = useOrigin();
-    console.log('origin: ', origin)
+
     return (
         <>
             <AlertModal 

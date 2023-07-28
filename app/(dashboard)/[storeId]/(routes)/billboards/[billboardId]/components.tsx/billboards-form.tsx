@@ -23,7 +23,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { useParams, useRouter } from "next/navigation";
 import { AlertModal } from "@/components/modals/alert-modal";
-import { useOrigin } from "@/hooks/use-origin";
 import ImageUpload from "@/components/ui/image-upload";
 
 const formSchema = z.object({
@@ -83,7 +82,7 @@ export const BillboardsForm: React.FC<BillboardsFormProps> = ({
             setLoading(true);
             await axios.delete(`/api/${params.storeId}/billboards/${params.billboardId}`);
             router.refresh();
-            router.push('/');
+            router.push(`/${params.storeId}/billboards`);
             toast.success("Billboard deleted.");
         } catch (error) {
             toast.error("Make sure you removed all categories using this billboard first!");
@@ -93,8 +92,6 @@ export const BillboardsForm: React.FC<BillboardsFormProps> = ({
         }
     };
 
-    const origin = useOrigin();
-    console.log('origin: ', origin)
     return (
         <>
             <AlertModal 
@@ -160,7 +157,6 @@ export const BillboardsForm: React.FC<BillboardsFormProps> = ({
                     </Button>
                 </form>
             </Form>
-            <Separator />
         </>
     )
 }
