@@ -1,6 +1,6 @@
 import prismadb from "@/lib/prismadb";
 
-import { ProductsForm } from "./components.tsx/products-form";
+import { ProductForm } from "./components.tsx/products-form";
 
 const ProductPage = async ({ 
     params 
@@ -38,7 +38,7 @@ const ProductPage = async ({
     return (
         <div className="flex-col">
             <div className="flex-1 space-y-4 p-8 pt-6">
-                <ProductsForm
+                <ProductForm
                     categories={categories}
                     colors={colors}
                     sizes={sizes}
